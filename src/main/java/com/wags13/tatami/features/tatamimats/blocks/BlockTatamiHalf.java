@@ -1,4 +1,4 @@
-package com.wags13.tatami.blocks;
+package com.wags13.tatami.features.tatamimats.blocks;
 
 import com.wags13.tatami.Tatami;
 
@@ -17,11 +17,9 @@ import net.minecraft.world.World;
 
 public class BlockTatamiHalf extends BlockHorizontal {
 
-	public BlockTatamiHalf(Material materialIn) {
+	public BlockTatamiHalf() {
 		super(Material.WOOD);
 		this.setSoundType(SoundType.WOOD);
-		this.setUnlocalizedName(Tatami.MODID + ".tatamihalf");
-		this.setRegistryName("tatamihalf");
 	}
 	
 	@Override

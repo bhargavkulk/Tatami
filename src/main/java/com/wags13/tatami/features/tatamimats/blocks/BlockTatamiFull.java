@@ -1,4 +1,4 @@
-package com.wags13.tatami.blocks;
+package com.wags13.tatami.features.tatamimats.blocks;
 
 import com.wags13.tatami.Tatami;
 
@@ -15,11 +15,9 @@ public class BlockTatamiFull extends BlockHorizontal {
 	public static final PropertyEnum<BlockTatamiFull.EnumPartType> PART = PropertyEnum.<BlockTatamiFull.EnumPartType>create(
 			"part", BlockTatamiFull.EnumPartType.class);
 
-	public BlockTatamiFull(Material materialIn) {
+	public BlockTatamiFull() {
 		super(Material.WOOD);
 		this.setSoundType(SoundType.WOOD);
-		this.setUnlocalizedName(Tatami.MODID + ".tatamifull");
-		this.setRegistryName("tatamifull");
 	}
 	
 	
