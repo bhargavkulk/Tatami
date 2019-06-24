@@ -18,6 +18,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 
 @Mod.EventBusSubscriber(modid=Tatami.ID)
@@ -36,7 +37,7 @@ public class Registry {
 
     public static void registerBlockWithItemBlock(Block block, String registryname) {
         block.setRegistryName(registryname);
-        block.setUnlocalizedName(Tatami.ID + ":" + block.getRegistryName().toString());
+        block.setUnlocalizedName(block.getRegistryName().toString());
 
         Item item = new ItemBlock(block);
         item.setRegistryName(registryname);
@@ -48,10 +49,10 @@ public class Registry {
 
     public static void registerBlockWithCustomItem(Block block, Item item, String registryname) {
         block.setRegistryName(registryname);
-        block.setUnlocalizedName(Tatami.ID + ":" + block.getRegistryName().toString());
+        block.setUnlocalizedName(block.getRegistryName().toString());
 
         item.setRegistryName(registryname);
-        item.setUnlocalizedName(Tatami.ID + ":" + block.getRegistryName().toString());
+        item.setUnlocalizedName(block.getRegistryName().toString());
 
         blocks.add(block);
         items.add(item);
@@ -59,11 +60,11 @@ public class Registry {
     }
 
     public static void registerShapedOreRecipe(ResourceLocation group, ItemStack result, Object... recipe) {
-        recipes.add(new ShapedOreRecipe(group, result, recipe));
+        recipes.add((IForgeRegistryEntry.Impl<IRecipe>) new ShapedOreRecipe(group, result, recipe).setRegistryName(group));
     }
 
     public static void registerShapelessOreRecipe(ResourceLocation group, ItemStack result, Object... recipe) {
-        recipes.add(new ShapedOreRecipe(group, result, recipe));
+        recipes.add((IForgeRegistryEntry.Impl<IRecipe>) new ShapelessOreRecipe(group, result, recipe).setRegistryName(group));
     }
 
     @SubscribeEvent

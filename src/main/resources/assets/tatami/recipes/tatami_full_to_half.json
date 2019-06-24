@@ -1,0 +1,12 @@
+{
+  "result": {
+    "item": "tatami:tatami_half",
+    "count": 2
+  },
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "tatami:tatami_full"
+    }
+  ]
+}

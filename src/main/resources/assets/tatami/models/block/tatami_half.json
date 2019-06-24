@@ -1,0 +1,25 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "block/block",
+  "textures": {
+    "0": "tatami:blocks/tatami_closed",
+    "2": "tatami:blocks/tatami_half_top",
+    "3": "tatami:blocks/tatami_open",
+    "1": "tatami:blocks/tatami_bottom",
+    "particle": "tatami:blocks/tatami_half_top"
+  },
+  "elements": [
+    {
+      "from": [0, 0, 0],
+      "to": [16, 16, 16],
+      "faces": {
+        "north": {"uv": [0, 0, 16, 16], "texture": "#0"},
+        "east": {"uv": [0, 0, 16, 16], "texture": "#3"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#0"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#3"},
+        "up": {"uv": [0, 0, 16, 16], "rotation": 90, "texture": "#2"},
+        "down": {"uv": [0, 0, 16, 16], "texture": "1"}
+      }
+    }
+  ]
+}

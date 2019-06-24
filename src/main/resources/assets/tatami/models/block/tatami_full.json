@@ -1,5 +1,13 @@
 {
   "credit": "Made with Blockbench",
+  "parent": "block/block",
+  "textures": {
+    "side_closed": "tatami:blocks/tatami_closed",
+    "side_open": "tatami:blocks/tatami_open",
+    "top": "tatami:blocks/tatami_full_top",
+    "bottom": "tatami:blocks/tatami_bottom",
+    "particle": "tatami:blocks/tatami_full_top"
+  },
   "elements": [
     {
       "from": [0, 0, 0],
@@ -10,7 +18,7 @@
         "south": {"uv": [0, 0, 16, 16], "texture": "#side_open"},
         "west": {"uv": [0, 0, 16, 16], "texture": "#side_closed"},
         "up": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#top"},
-        "down": {"uv": [0, 0, 16, 16], "texture": "minecraft:blocks/planks_oak"}
+        "down": {"uv": [0, 0, 16, 16], "texture": "#bottom"}
       }
     }
   ]

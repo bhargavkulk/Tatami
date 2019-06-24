@@ -1,0 +1,21 @@
+{
+  "result": {
+    "item": "tatami:tatami_half",
+    "count": 6
+  },
+  "pattern": [
+    "XXX",
+    "YYY",
+    "YYY"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "Y": {
+      "type": "forge:ore_dict",
+      "ore": "plankWood"
+    },
+    "X": {
+      "item": "minecraft:reeds"
+    }
+  }
+}

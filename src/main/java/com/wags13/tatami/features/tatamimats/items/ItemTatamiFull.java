@@ -1,5 +1,6 @@
 package com.wags13.tatami.features.tatamimats.items;
 
+import com.wags13.tatami.Tatami;
 import com.wags13.tatami.features.tatamimats.TatamiMats;
 import com.wags13.tatami.features.tatamimats.blocks.BlockTatamiFull;
 import net.minecraft.block.Block;
@@ -13,26 +14,29 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+
+/*else if (facing != EnumFacing.UP) {
+            return EnumActionResult.FAIL;
+        } */
 
 public class ItemTatamiFull extends Item {
 
     public ItemTatamiFull() {
+        this.setCreativeTab(Tatami.tabTatami);
     }
 
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos footPos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+
         if (worldIn.isRemote) {
             return EnumActionResult.SUCCESS;
-        } else if (facing != EnumFacing.UP) {
-            return EnumActionResult.FAIL;
         } else {
             IBlockState foot = worldIn.getBlockState(footPos);
             Block footBlock = foot.getBlock();
             boolean isReplaceable = footBlock.isReplaceable(worldIn, footPos);
 
             if (!isReplaceable) {
-                footPos = footPos.up();
+                footPos = footPos.offset(facing);
             }
 
             EnumFacing enumfacing = player.getHorizontalFacing();
@@ -46,7 +50,7 @@ public class ItemTatamiFull extends Item {
                 boolean isFootPlaceable = isReplaceable || worldIn.isAirBlock(footPos);
                 boolean isHeadPlaceable = head.getBlock().isReplaceable(worldIn, headPos) || worldIn.isAirBlock(headPos);
 
-                if (isFootPlaceable && isHeadPlaceable && worldIn.getBlockState(footPos.down()).isTopSolid() && worldIn.getBlockState(headPos.down()).isTopSolid()) {
+                if (isFootPlaceable && isHeadPlaceable) {
                     IBlockState footState = TatamiMats.tatamiFull.getDefaultState()
                             .withProperty(BlockTatamiFull.FACING, enumfacing)
                             .withProperty(BlockTatamiFull.PART, BlockTatamiFull.EnumPartType.FOOT);

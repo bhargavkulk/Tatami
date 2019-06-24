@@ -8,6 +8,7 @@ import com.wags13.tatami.features.tatamimats.items.*;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
+
 public class TatamiMats extends Feature {
 	
 	public static Block tatamiHalf;
@@ -26,6 +27,7 @@ public class TatamiMats extends Feature {
 		
 		Registry.registerBlockWithItemBlock(tatamiHalf, "tatami_half");
 		Registry.registerBlockWithCustomItem(tatamiFull, itemTatamiFull, "tatami_full");
+
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.wags13.tatami.features.tatamimats.blocks;
 
+import com.wags13.tatami.Tatami;
 import com.wags13.tatami.features.tatamimats.TatamiMats;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHorizontal;
