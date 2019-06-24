@@ -1,0 +1,21 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "side_closed": "tatami:blocks/tatami_closed",
+      "side_open": "tatami:blocks/tatami_open",
+      "top": "tatami:blocks/tatami_full_top",
+      "particle": "tatami:blocks/tatami_full_top"
+    }
+  },
+  "variants": {
+    "facing=south,part=head": { "model": "tatami:block/tatami_full" },
+    "facing=west,part=head": { "model": "tatami:block/tatami_full", "y": 90 },
+    "facing=north,part=head": { "model": "tatami:block/tatami_full", "y": 180 },
+    "facing=east,part=head": { "model": "tatami:block/tatami_full", "y": 270 },
+    "facing=south,part=foot": { "model": "tatami:block/tatami_full" },
+    "facing=west,part=foot": { "model": "tatami:block/tatami_full", "y": 90 },
+    "facing=north,part=foot": { "model": "tatami:block/tatami_full", "y": 180 },
+    "facing=east,part=foot": { "model": "tatami:block/tatami_full", "y": 270}
+  }
+}

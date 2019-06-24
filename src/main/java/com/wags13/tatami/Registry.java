@@ -22,73 +22,74 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 
 @Mod.EventBusSubscriber(modid=Tatami.ID)
 public class Registry {
-	
-	private static List<Block> blocks = new ArrayList<>();
-	private static List<Item> items = new ArrayList<>();
-	private static List<IForgeRegistryEntry.Impl<IRecipe>> recipes = new ArrayList<>();
-	private static Map<Block, Item> blockItemMap = new HashMap<>();
-	
-	public static void registerBlock(Block block, String registryname) {
-		block.setRegistryName(registryname);
-		block.setUnlocalizedName(Tatami.ID + ":" + block.getRegistryName().toString());
-		blocks.add(block);
-	}
-	
-	public static void registerBlockWithItemBlock(Block block, String registryname) {
-		block.setRegistryName(registryname);
-		block.setUnlocalizedName(Tatami.ID + ":" + block.getRegistryName().toString());
-		
-		Item item = new ItemBlock(block);
-		item.setRegistryName(registryname);
-		
-		blocks.add(block);
-		items.add(item);
-		blockItemMap.put(block, item);
-	}
-	
-	public static void registerBlockWithCustomItem(Block block, Item item, String registryname) {
-		block.setRegistryName(registryname);
-		block.setUnlocalizedName(Tatami.ID + ":" + block.getRegistryName().toString());
-		
-		item.setUnlocalizedName(registryname);
-		
-		blocks.add(block);
-		items.add(item);
-		blockItemMap.put(block, item);		
-	}
-	
-	public static void registerShapedOreRecipe(ResourceLocation group, ItemStack result, Object... recipe) {
-		recipes.add(new ShapedOreRecipe(group, result, recipe));
-	}
-	
-	public static void registerShapelessOreRecipe(ResourceLocation group, ItemStack result, Object... recipe) {
-		recipes.add(new ShapedOreRecipe(group, result, recipe));
-	}
-	
-	@SubscribeEvent
-	public static void registerBlocks(RegistryEvent.Register<Block> event) {
-		event.getRegistry().registerAll(blocks.toArray(new Block[blocks.size()]));
-	}
-	
-	@SubscribeEvent
-	public static void registerItems(RegistryEvent.Register<Item> event) {
-		event.getRegistry().registerAll(items.toArray(new Item[items.size()]));
-	}
-	
-	@SubscribeEvent
-	public static void registerRenders(ModelRegistryEvent event) {
-		blockItemMap.forEach((block, item) -> 
-		ModelLoader.setCustomModelResourceLocation(
-		    	item, 
-		        0, 
-		        new ModelResourceLocation(item.getRegistryName(), "inventory")
-		    )
-		);
-	}
-	
-	@SubscribeEvent
-	public void init(RegistryEvent.Register<IRecipe> event) {
-		event.getRegistry().registerAll(recipes.toArray(new IRecipe[recipes.size()]));
-	}
-	
+
+    private static List<Block> blocks = new ArrayList<>();
+    private static List<Item> items = new ArrayList<>();
+    private static List<IForgeRegistryEntry.Impl<IRecipe>> recipes = new ArrayList<>();
+    private static Map<Block, Item> blockItemMap = new HashMap<>();
+
+    public static void registerBlock(Block block, String registryname) {
+        block.setRegistryName(registryname);
+        block.setUnlocalizedName(Tatami.ID + ":" + block.getRegistryName().toString());
+        blocks.add(block);
+    }
+
+    public static void registerBlockWithItemBlock(Block block, String registryname) {
+        block.setRegistryName(registryname);
+        block.setUnlocalizedName(Tatami.ID + ":" + block.getRegistryName().toString());
+
+        Item item = new ItemBlock(block);
+        item.setRegistryName(registryname);
+
+        blocks.add(block);
+        items.add(item);
+        blockItemMap.put(block, item);
+    }
+
+    public static void registerBlockWithCustomItem(Block block, Item item, String registryname) {
+        block.setRegistryName(registryname);
+        block.setUnlocalizedName(Tatami.ID + ":" + block.getRegistryName().toString());
+
+        item.setRegistryName(registryname);
+        item.setUnlocalizedName(Tatami.ID + ":" + block.getRegistryName().toString());
+
+        blocks.add(block);
+        items.add(item);
+        blockItemMap.put(block, item);
+    }
+
+    public static void registerShapedOreRecipe(ResourceLocation group, ItemStack result, Object... recipe) {
+        recipes.add(new ShapedOreRecipe(group, result, recipe));
+    }
+
+    public static void registerShapelessOreRecipe(ResourceLocation group, ItemStack result, Object... recipe) {
+        recipes.add(new ShapedOreRecipe(group, result, recipe));
+    }
+
+    @SubscribeEvent
+    public static void registerBlocks(RegistryEvent.Register<Block> event) {
+        event.getRegistry().registerAll(blocks.toArray(new Block[blocks.size()]));
+    }
+
+    @SubscribeEvent
+    public static void registerItems(RegistryEvent.Register<Item> event) {
+        event.getRegistry().registerAll(items.toArray(new Item[items.size()]));
+    }
+
+    @SubscribeEvent
+    public static void registerRenders(ModelRegistryEvent event) {
+        blockItemMap.values().forEach( item ->
+                ModelLoader.setCustomModelResourceLocation(
+                        item,
+                        0,
+                        new ModelResourceLocation(item.getRegistryName(), "inventory")
+                )
+        );
+    }
+
+    @SubscribeEvent
+    public void init(RegistryEvent.Register<IRecipe> event) {
+        event.getRegistry().registerAll(recipes.toArray(new IRecipe[recipes.size()]));
+    }
+
 }

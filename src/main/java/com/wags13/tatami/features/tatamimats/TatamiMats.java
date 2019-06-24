@@ -25,7 +25,7 @@ public class TatamiMats extends Feature {
 		itemTatamiFull = new ItemTatamiFull();
 		
 		Registry.registerBlockWithItemBlock(tatamiHalf, "tatami_half");
-		Registry.registerBlockWithCustomItem(tatamiHalf, itemTatamiFull, "tatami_full");
+		Registry.registerBlockWithCustomItem(tatamiFull, itemTatamiFull, "tatami_full");
 	}
 
 }

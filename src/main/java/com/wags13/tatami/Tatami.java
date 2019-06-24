@@ -1,5 +1,6 @@
 package com.wags13.tatami;
 
+import com.wags13.tatami.features.FeatureLoader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -12,5 +13,6 @@ public class Tatami {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        FeatureLoader.preInit();
     }
 }

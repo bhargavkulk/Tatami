@@ -1,0 +1,17 @@
+{
+  "credit": "Made with Blockbench",
+  "elements": [
+    {
+      "from": [0, 0, 0],
+      "to": [16, 16, 16],
+      "faces": {
+        "north": {"uv": [0, 0, 16, 16], "texture": "#side_closed"},
+        "east": {"uv": [0, 0, 16, 16], "texture": "#side_closed"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#side_open"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#side_closed"},
+        "up": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#top"},
+        "down": {"uv": [0, 0, 16, 16], "texture": "minecraft:blocks/planks_oak"}
+      }
+    }
+  ]
+}
