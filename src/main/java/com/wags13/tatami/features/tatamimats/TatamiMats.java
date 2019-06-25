@@ -11,9 +11,9 @@ import net.minecraft.item.Item;
 
 public class TatamiMats extends Feature {
 	
-	public static Block tatamiHalf;
-	public static Block tatamiFull;
-	public static Item itemTatamiFull;
+	public static Block TATAMI_HALF;
+	public static Block TATAMI_FULL;
+	public static Item ITEM_TATAMI_FULL;
 	
 	public TatamiMats() {
 		super("tatami_mats");
@@ -21,12 +21,12 @@ public class TatamiMats extends Feature {
 
 	@Override
 	public void preInit() {
-		tatamiHalf = new BlockTatamiHalf();
-		tatamiFull = new BlockTatamiFull();
-		itemTatamiFull = new ItemTatamiFull();
+		TATAMI_HALF = new BlockTatamiHalf();
+		TATAMI_FULL = new BlockTatamiFull();
+		ITEM_TATAMI_FULL = new ItemTatamiFull();
 		
-		Registry.registerBlockWithItemBlock(tatamiHalf, "tatami_half");
-		Registry.registerBlockWithCustomItem(tatamiFull, itemTatamiFull, "tatami_full");
+		Registry.registerBlockWithItemBlock(TATAMI_HALF, "tatami_half");
+		Registry.registerBlockWithCustomItem(TATAMI_FULL, ITEM_TATAMI_FULL, "tatami_full");
 
 	}
 

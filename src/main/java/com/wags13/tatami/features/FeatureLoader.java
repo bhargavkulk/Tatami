@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.function.Consumer;
 
 import com.wags13.tatami.base.Feature;
+import com.wags13.tatami.features.shojipanels.ShojiPanels;
 import com.wags13.tatami.features.tatamimats.TatamiMats;
 
 public class FeatureLoader {
@@ -16,6 +17,7 @@ public class FeatureLoader {
 	
 	public static void setup() {
 		registerFeature(TatamiMats.class);
+		registerFeature(ShojiPanels.class);
 	}
 	
 	public static void preInit() {

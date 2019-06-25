@@ -16,10 +16,6 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-/*else if (facing != EnumFacing.UP) {
-            return EnumActionResult.FAIL;
-        } */
-
 public class ItemTatamiFull extends Item {
 
     public ItemTatamiFull() {
@@ -51,7 +47,7 @@ public class ItemTatamiFull extends Item {
                 boolean isHeadPlaceable = head.getBlock().isReplaceable(worldIn, headPos) || worldIn.isAirBlock(headPos);
 
                 if (isFootPlaceable && isHeadPlaceable) {
-                    IBlockState footState = TatamiMats.tatamiFull.getDefaultState()
+                    IBlockState footState = TatamiMats.TATAMI_FULL.getDefaultState()
                             .withProperty(BlockTatamiFull.FACING, enumfacing)
                             .withProperty(BlockTatamiFull.PART, BlockTatamiFull.EnumPartType.FOOT);
                     IBlockState headState = footState.withProperty(BlockTatamiFull.PART, BlockTatamiFull.EnumPartType.HEAD)

@@ -1,6 +1,5 @@
 package com.wags13.tatami.features.tatamimats.blocks;
 
-import com.wags13.tatami.Tatami;
 import com.wags13.tatami.features.tatamimats.TatamiMats;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHorizontal;
@@ -25,8 +24,8 @@ import java.util.Random;
 
 public class BlockTatamiFull extends BlockHorizontal {
 
-    public static final PropertyEnum<BlockTatamiFull.EnumPartType> PART = PropertyEnum.<BlockTatamiFull.EnumPartType>create(
-            "part", BlockTatamiFull.EnumPartType.class);
+    public static final PropertyEnum<EnumPartType> PART = PropertyEnum.<EnumPartType>create(
+            "part", EnumPartType.class);
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 
     public BlockTatamiFull() {
@@ -77,12 +76,12 @@ public class BlockTatamiFull extends BlockHorizontal {
      * Get the Item that this Block should drop when harvested.
      */
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-        return state.getValue(PART) == EnumPartType.FOOT ? Items.AIR : TatamiMats.itemTatamiFull;
+        return state.getValue(PART) == EnumPartType.FOOT ? Items.AIR : TatamiMats.ITEM_TATAMI_FULL;
     }
 
     public void dropBlockAsItemWithChance(World worldIn, BlockPos pos, IBlockState state, float chance, int fortune) {
         if (state.getValue(PART) == EnumPartType.HEAD) {
-            spawnAsEntity(worldIn, pos, new ItemStack(TatamiMats.itemTatamiFull, 1));
+            spawnAsEntity(worldIn, pos, new ItemStack(TatamiMats.ITEM_TATAMI_FULL, 1));
         }
     }
 
@@ -93,7 +92,7 @@ public class BlockTatamiFull extends BlockHorizontal {
             blockpos = pos.offset((EnumFacing) state.getValue(FACING));
         }
 
-        return new ItemStack(TatamiMats.itemTatamiFull, 1);
+        return new ItemStack(TatamiMats.ITEM_TATAMI_FULL, 1);
     }
 
     /**
@@ -116,7 +115,7 @@ public class BlockTatamiFull extends BlockHorizontal {
      */
     public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, TileEntity te, ItemStack stack) {
         if (state.getValue(PART) == EnumPartType.HEAD) {
-            spawnAsEntity(worldIn, pos, new ItemStack(TatamiMats.itemTatamiFull, 1));
+            spawnAsEntity(worldIn, pos, new ItemStack(TatamiMats.ITEM_TATAMI_FULL, 1));
         } else {
             super.harvestBlock(worldIn, player, pos, state, (TileEntity) null, stack);
         }

@@ -1,0 +1,7 @@
+{
+  "parent": "block/pane_post",
+  "textures": {
+    "edge": "tatami:blocks/panel_top",
+    "pane": "tatami:blocks/panel_front_bottom"
+  }
+}

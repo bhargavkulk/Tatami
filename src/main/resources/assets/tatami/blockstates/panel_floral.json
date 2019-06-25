@@ -1,0 +1,82 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "tatami:paper_panel_post"
+  },
+  "variants": {
+    "type": {
+      "bottom": {
+        "textures" : {
+          "pane" : "tatami:blocks/panel_floral_bottom",
+          "edge" : "tatami:blocks/panel_edge"
+        }
+      },
+      "middle": {
+        "textures" : {
+          "pane" : "tatami:blocks/panel_floral_middle",
+          "edge" : "tatami:blocks/panel_edge"
+        }
+      },
+      "top": {
+        "textures" : {
+          "pane" : "tatami:blocks/panel_floral_top",
+          "edge" : "tatami:blocks/panel_edge"
+        }
+      },
+      "post": {
+        "textures" : {
+          "pane" : "tatami:blocks/panel_edge",
+          "edge" : "tatami:blocks/panel_edge"
+        }
+      }
+    },
+    "east": {
+      "true": {
+        "submodel" : {
+          "east1" : { "model": "pane_side", "y" : 90}
+        }
+      },
+      "false": {
+        "submodel" : {
+          "east2" : { "model": "pane_noside_alt"}
+        }
+      }
+    },
+    "north": {
+      "true": {
+        "submodel" : {
+          "north1" : { "model": "pane_side"}
+        }
+      },
+      "false": {
+        "submodel" : {
+          "north2" : { "model": "pane_noside"}
+        }
+      }
+    },
+    "south": {
+      "true": {
+        "submodel" : {
+          "south1" : { "model": "pane_side_alt"}
+        }
+      },
+      "false": {
+        "submodel" : {
+          "south2" : { "model": "pane_noside_alt", "y": 90 }
+        }
+      }
+    },
+    "west": {
+      "true": {
+        "submodel" : {
+          "west1" : { "model": "pane_side_alt", "y": 90 }
+        }
+      },
+      "false": {
+        "submodel" : {
+          "west2" : { "model": "pane_noside", "y": 270 }
+        }
+      }
+    }
+  }
+}
