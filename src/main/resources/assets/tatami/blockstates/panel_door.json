@@ -1,0 +1,84 @@
+{
+  "variants": {
+    "facing=east,half=lower,hinge=left,open=false,powered=false":  { "model": "tatami:panel_door_bottom" },
+    "facing=south,half=lower,hinge=left,open=false,powered=false": { "model": "tatami:panel_door_bottom", "y": 90 },
+    "facing=west,half=lower,hinge=left,open=false,powered=false":  { "model": "tatami:panel_door_bottom", "y": 180 },
+    "facing=north,half=lower,hinge=left,open=false,powered=false": { "model": "tatami:panel_door_bottom", "y": 270 },
+
+    "facing=east,half=lower,hinge=right,open=false,powered=false":  { "model": "tatami:panel_door_bottom" },
+    "facing=south,half=lower,hinge=right,open=false,powered=false": { "model": "tatami:panel_door_bottom", "y": 90 },
+    "facing=west,half=lower,hinge=right,open=false,powered=false":  { "model": "tatami:panel_door_bottom", "y": 180 },
+    "facing=north,half=lower,hinge=right,open=false,powered=false": { "model": "tatami:panel_door_bottom", "y": 270 },
+
+    "facing=east,half=lower,hinge=left,open=true,powered=false":  { "model": "tatami:panel_door_bottom_lh" },
+    "facing=south,half=lower,hinge=left,open=true,powered=false": { "model": "tatami:panel_door_bottom_lh", "y": 90 },
+    "facing=west,half=lower,hinge=left,open=true,powered=false":  { "model": "tatami:panel_door_bottom_lh", "y": 180 },
+    "facing=north,half=lower,hinge=left,open=true,powered=false": { "model": "tatami:panel_door_bottom_lh", "y": 270 },
+
+    "facing=east,half=lower,hinge=right,open=true,powered=false":  { "model": "tatami:panel_door_bottom_rh" },
+    "facing=south,half=lower,hinge=right,open=true,powered=false": { "model": "tatami:panel_door_bottom_rh", "y": 90 },
+    "facing=west,half=lower,hinge=right,open=true,powered=false":  { "model": "tatami:panel_door_bottom_rh", "y": 180 },
+    "facing=north,half=lower,hinge=right,open=true,powered=false": { "model": "tatami:panel_door_bottom_rh", "y": 270 },
+
+    "facing=east,half=upper,hinge=left,open=false,powered=false":  { "model": "tatami:panel_door_top" },
+    "facing=south,half=upper,hinge=left,open=false,powered=false": { "model": "tatami:panel_door_top", "y": 90 },
+    "facing=west,half=upper,hinge=left,open=false,powered=false":  { "model": "tatami:panel_door_top", "y": 180 },
+    "facing=north,half=upper,hinge=left,open=false,powered=false": { "model": "tatami:panel_door_top", "y": 270 },
+
+    "facing=east,half=upper,hinge=right,open=false,powered=false":  { "model": "tatami:panel_door_top" },
+    "facing=south,half=upper,hinge=right,open=false,powered=false": { "model": "tatami:panel_door_top", "y": 90 },
+    "facing=west,half=upper,hinge=right,open=false,powered=false":  { "model": "tatami:panel_door_top", "y": 180 },
+    "facing=north,half=upper,hinge=right,open=false,powered=false": { "model": "tatami:panel_door_top", "y": 270 },
+
+    "facing=east,half=upper,hinge=left,open=true,powered=false":  { "model": "tatami:panel_door_top_lh" },
+    "facing=south,half=upper,hinge=left,open=true,powered=false": { "model": "tatami:panel_door_top_lh", "y": 90 },
+    "facing=west,half=upper,hinge=left,open=true,powered=false":  { "model": "tatami:panel_door_top_lh", "y": 180 },
+    "facing=north,half=upper,hinge=left,open=true,powered=false": { "model": "tatami:panel_door_top_lh", "y": 270 },
+
+    "facing=east,half=upper,hinge=right,open=true,powered=false":  { "model": "tatami:panel_door_top_rh" },
+    "facing=south,half=upper,hinge=right,open=true,powered=false": { "model": "tatami:panel_door_top_rh", "y": 90 },
+    "facing=west,half=upper,hinge=right,open=true,powered=false":  { "model": "tatami:panel_door_top_rh", "y": 180 },
+    "facing=north,half=upper,hinge=right,open=true,powered=false": { "model": "tatami:panel_door_top_rh", "y": 270 },
+
+
+    "facing=east,half=lower,hinge=left,open=false,powered=true":  { "model": "tatami:panel_door_bottom" },
+    "facing=south,half=lower,hinge=left,open=false,powered=true": { "model": "tatami:panel_door_bottom", "y": 90 },
+    "facing=west,half=lower,hinge=left,open=false,powered=true":  { "model": "tatami:panel_door_bottom", "y": 180 },
+    "facing=north,half=lower,hinge=left,open=false,powered=true": { "model": "tatami:panel_door_bottom", "y": 270 },
+
+    "facing=east,half=lower,hinge=right,open=false,powered=true":  { "model": "tatami:panel_door_bottom" },
+    "facing=south,half=lower,hinge=right,open=false,powered=true": { "model": "tatami:panel_door_bottom", "y": 90 },
+    "facing=west,half=lower,hinge=right,open=false,powered=true":  { "model": "tatami:panel_door_bottom", "y": 180 },
+    "facing=north,half=lower,hinge=right,open=false,powered=true": { "model": "tatami:panel_door_bottom", "y": 270 },
+
+    "facing=east,half=lower,hinge=left,open=true,powered=true":  { "model": "tatami:panel_door_bottom_lh" },
+    "facing=south,half=lower,hinge=left,open=true,powered=true": { "model": "tatami:panel_door_bottom_lh", "y": 90 },
+    "facing=west,half=lower,hinge=left,open=true,powered=true":  { "model": "tatami:panel_door_bottom_lh", "y": 180 },
+    "facing=north,half=lower,hinge=left,open=true,powered=true": { "model": "tatami:panel_door_bottom_lh", "y": 270 },
+
+    "facing=east,half=lower,hinge=right,open=true,powered=true":  { "model": "tatami:panel_door_bottom_rh" },
+    "facing=south,half=lower,hinge=right,open=true,powered=true": { "model": "tatami:panel_door_bottom_rh", "y": 90 },
+    "facing=west,half=lower,hinge=right,open=true,powered=true":  { "model": "tatami:panel_door_bottom_rh", "y": 180 },
+    "facing=north,half=lower,hinge=right,open=true,powered=true": { "model": "tatami:panel_door_bottom_rh", "y": 270 },
+
+    "facing=east,half=upper,hinge=left,open=false,powered=true":  { "model": "tatami:panel_door_top" },
+    "facing=south,half=upper,hinge=left,open=false,powered=true": { "model": "tatami:panel_door_top", "y": 90 },
+    "facing=west,half=upper,hinge=left,open=false,powered=true":  { "model": "tatami:panel_door_top", "y": 180 },
+    "facing=north,half=upper,hinge=left,open=false,powered=true": { "model": "tatami:panel_door_top", "y": 270 },
+
+    "facing=east,half=upper,hinge=right,open=false,powered=true":  { "model": "tatami:panel_door_top" },
+    "facing=south,half=upper,hinge=right,open=false,powered=true": { "model": "tatami:panel_door_top", "y": 90 },
+    "facing=west,half=upper,hinge=right,open=false,powered=true":  { "model": "tatami:panel_door_top", "y": 180 },
+    "facing=north,half=upper,hinge=right,open=false,powered=true": { "model": "tatami:panel_door_top", "y": 270 },
+
+    "facing=east,half=upper,hinge=left,open=true,powered=true":  { "model": "tatami:panel_door_top_lh" },
+    "facing=south,half=upper,hinge=left,open=true,powered=true": { "model": "tatami:panel_door_top_lh", "y": 90 },
+    "facing=west,half=upper,hinge=left,open=true,powered=true":  { "model": "tatami:panel_door_top_lh", "y": 180 },
+    "facing=north,half=upper,hinge=left,open=true,powered=true": { "model": "tatami:panel_door_top_lh", "y": 270 },
+
+    "facing=east,half=upper,hinge=right,open=true,powered=true":  { "model": "tatami:panel_door_top_rh" },
+    "facing=south,half=upper,hinge=right,open=true,powered=true": { "model": "tatami:panel_door_top_rh", "y": 90 },
+    "facing=west,half=upper,hinge=right,open=true,powered=true":  { "model": "tatami:panel_door_top_rh", "y": 180 },
+    "facing=north,half=upper,hinge=right,open=true,powered=true": { "model": "tatami:panel_door_top_rh", "y": 270 }
+  }
+}

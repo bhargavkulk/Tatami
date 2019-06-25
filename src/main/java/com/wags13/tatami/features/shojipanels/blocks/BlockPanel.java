@@ -1,6 +1,7 @@
 package com.wags13.tatami.features.shojipanels.blocks;
 
 import com.wags13.tatami.Tatami;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockPane;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -21,6 +22,7 @@ public class BlockPanel extends BlockPane {
         super(Material.CLOTH, true);
         this.setCreativeTab(Tatami.tabTatami);
         this.setSoundType(SoundType.CLOTH);
+        this.setHardness(0.8f);
     }
 
     @Override
@@ -30,40 +32,54 @@ public class BlockPanel extends BlockPane {
 
     @Override
     public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
-        boolean canConnectToNorth = canPaneConnectTo(worldIn, pos, EnumFacing.NORTH);
-        boolean canConnectToSouth = canPaneConnectTo(worldIn, pos, EnumFacing.SOUTH);
-        boolean canConnectToEast = canPaneConnectTo(worldIn, pos, EnumFacing.EAST);
-        boolean canConnectToWest = canPaneConnectTo(worldIn, pos, EnumFacing.WEST);
+
+        Block blockNorth = worldIn.getBlockState(pos.offset(EnumFacing.NORTH)).getBlock();
+        Block blockSouth = worldIn.getBlockState(pos.offset(EnumFacing.SOUTH)).getBlock();
+        Block blockEast = worldIn.getBlockState(pos.offset(EnumFacing.EAST)).getBlock();
+        Block blockWest = worldIn.getBlockState(pos.offset(EnumFacing.WEST)).getBlock();
+
+
+        boolean canConnectToNorth = canPaneConnectTo(worldIn, pos, EnumFacing.NORTH) || blockNorth instanceof BlockPanelDoor;
+        boolean canConnectToSouth = canPaneConnectTo(worldIn, pos, EnumFacing.SOUTH) || blockSouth instanceof BlockPanelDoor;
+        boolean canConnectToEast = canPaneConnectTo(worldIn, pos, EnumFacing.EAST) || blockEast instanceof BlockPanelDoor;
+        boolean canConnectToWest = canPaneConnectTo(worldIn, pos, EnumFacing.WEST) || blockWest instanceof BlockPanelDoor;
+
+        boolean post = !canConnectToEast && !canConnectToNorth && !canConnectToSouth && !canConnectToWest;
+
         state = state.withProperty(NORTH, canConnectToNorth)
                 .withProperty(SOUTH, canConnectToSouth)
                 .withProperty(WEST, canConnectToWest)
                 .withProperty(EAST, canConnectToEast);
 
-        IBlockState stte = worldIn.getBlockState(pos.up());
-        boolean top = false;
+        IBlockState upState = worldIn.getBlockState(pos.up());
+        IBlockState downState = worldIn.getBlockState(pos.down());
 
-        if (stte.getBlock() instanceof BlockPanel) {
+        boolean top = false;
+        boolean down = false;
+
+        if (upState.getBlock() instanceof BlockPanel) {
             top = true;
         }
 
-        stte = worldIn.getBlockState(pos.down());
-        boolean down = false;
-
-        if (stte.getBlock() instanceof BlockPanel) {
+        if ((downState.getBlock() instanceof BlockPanel || downState.getBlock() instanceof BlockPanelDoor)
+                && !downState.getBlock().isAir(downState, worldIn, pos.down())) {
             down = true;
         }
 
-        if (!canConnectToEast && !canConnectToNorth && !canConnectToSouth && !canConnectToWest) {
-            return state.withProperty(TYPE, EnumBlockType.POST);
-        } else if (top && down) {
+        if(top && down) {
             return state.withProperty(TYPE, EnumBlockType.MIDDLE);
-        } else if (down) {
+        } else if(down) {
             return state.withProperty(TYPE, EnumBlockType.TOP);
         } else {
             return state.withProperty(TYPE, EnumBlockType.BOTTOM);
         }
+
     }
 
+    @Override
+    public boolean canPaneConnectTo(IBlockAccess world, BlockPos pos, EnumFacing dir) {
+        return super.canPaneConnectTo(world, pos, dir);
+    }
 
     @Override
     protected boolean canSilkHarvest() {

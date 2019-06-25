@@ -28,6 +28,12 @@
           "pane" : "tatami:blocks/panel_edge",
           "edge" : "tatami:blocks/panel_edge"
         }
+      },
+      "bottum": {
+        "textures" : {
+          "pane" : "tatami:blocks/panel_plain_bottom",
+          "edge" : "tatami:blocks/panel_edge"
+        }
       }
     },
     "east": {
