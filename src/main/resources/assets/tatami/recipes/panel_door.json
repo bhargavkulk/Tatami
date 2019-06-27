@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "tatami:panel_door",
+    "count": 6
+  },
+  "pattern": [
+    "XX",
+    "XX",
+    "XX"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "X": {
+      "item": "tatami:panel_plain"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "result": {
+    "item": "tatami:panel_plain",
+    "count": 1
+  },
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "tatami:panel_floral"
+    }
+  ]
+}

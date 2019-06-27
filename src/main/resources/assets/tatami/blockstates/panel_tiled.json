@@ -5,7 +5,7 @@
   },
   "variants": {
     "type": {
-      "bottom": {
+      "base": {
         "textures" : {
           "pane" : "tatami:blocks/panel_tiled_bottom",
           "edge" : "tatami:blocks/panel_edge"
@@ -29,9 +29,15 @@
           "edge" : "tatami:blocks/panel_edge"
         }
       },
-      "bottum": {
+      "square": {
         "textures" : {
-          "pane" : "tatami:blocks/panel_tiled_bottom",
+          "pane" : "tatami:blocks/panel_tiled",
+          "edge" : "tatami:blocks/panel_edge"
+        }
+      },
+      "bottom": {
+        "textures" : {
+          "pane" : "tatami:blocks/panel_tiled",
           "edge" : "tatami:blocks/panel_edge"
         }
       }

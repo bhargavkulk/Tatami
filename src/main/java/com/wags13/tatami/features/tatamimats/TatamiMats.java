@@ -1,6 +1,6 @@
 package com.wags13.tatami.features.tatamimats;
 
-import com.wags13.tatami.Registry;
+import com.wags13.tatami.registries.GeneralRegistry;
 import com.wags13.tatami.base.Feature;
 import com.wags13.tatami.features.tatamimats.blocks.*;
 import com.wags13.tatami.features.tatamimats.items.*;
@@ -25,8 +25,8 @@ public class TatamiMats extends Feature {
 		TATAMI_FULL = new BlockTatamiFull();
 		ITEM_TATAMI_FULL = new ItemTatamiFull();
 		
-		Registry.registerBlockWithItemBlock(TATAMI_HALF, "tatami_half");
-		Registry.registerBlockWithCustomItem(TATAMI_FULL, ITEM_TATAMI_FULL, "tatami_full");
+		GeneralRegistry.registerBlockWithItemBlock(TATAMI_HALF, "tatami_half");
+		GeneralRegistry.registerBlockWithCustomItem(TATAMI_FULL, ITEM_TATAMI_FULL, "tatami_full");
 
 	}
 

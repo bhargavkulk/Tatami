@@ -4,15 +4,18 @@ import com.wags13.tatami.features.FeatureLoader;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Tatami.ID, name = Tatami.NAME, version = Tatami.VERSION)
+@Mod(modid = Tatami.ID, name = Tatami.NAME, version = Tatami.VERSION, dependencies = "after:quark")
 public class Tatami {
     public static final String ID = "tatami";
     public static final String NAME = "Tatami";
     public static final String VERSION = "1.0.0";
+
+    public static boolean isQuarkLoaded;
 
     public static final CreativeTabs tabTatami = new CreativeTabs("tabTatami") {
         @Override
@@ -23,6 +26,7 @@ public class Tatami {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        isQuarkLoaded = Loader.isModLoaded("quark");
         FeatureLoader.preInit();
     }
 }

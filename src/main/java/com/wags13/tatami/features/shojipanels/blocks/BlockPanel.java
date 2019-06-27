@@ -1,6 +1,7 @@
 package com.wags13.tatami.features.shojipanels.blocks;
 
 import com.wags13.tatami.Tatami;
+import com.wags13.tatami.features.shojipanels.ShojiPanels;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPane;
 import net.minecraft.block.SoundType;
@@ -9,10 +10,12 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+
 
 public class BlockPanel extends BlockPane {
 
@@ -30,19 +33,16 @@ public class BlockPanel extends BlockPane {
         return new BlockStateContainer(this, new IProperty[]{TYPE, NORTH, SOUTH, EAST, WEST});
     }
 
-    @Override
-    public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
-
-        Block blockNorth = worldIn.getBlockState(pos.offset(EnumFacing.NORTH)).getBlock();
+    /*
+    Block blockNorth = worldIn.getBlockState(pos.offset(EnumFacing.NORTH)).getBlock();
         Block blockSouth = worldIn.getBlockState(pos.offset(EnumFacing.SOUTH)).getBlock();
         Block blockEast = worldIn.getBlockState(pos.offset(EnumFacing.EAST)).getBlock();
         Block blockWest = worldIn.getBlockState(pos.offset(EnumFacing.WEST)).getBlock();
 
-
-        boolean canConnectToNorth = canPaneConnectTo(worldIn, pos, EnumFacing.NORTH) || blockNorth instanceof BlockPanelDoor;
-        boolean canConnectToSouth = canPaneConnectTo(worldIn, pos, EnumFacing.SOUTH) || blockSouth instanceof BlockPanelDoor;
-        boolean canConnectToEast = canPaneConnectTo(worldIn, pos, EnumFacing.EAST) || blockEast instanceof BlockPanelDoor;
-        boolean canConnectToWest = canPaneConnectTo(worldIn, pos, EnumFacing.WEST) || blockWest instanceof BlockPanelDoor;
+        boolean canConnectToNorth = canPaneConnectTo(worldIn, pos, EnumFacing.NORTH) || blockNorth == ShojiPanels.PANEL_DOOR;
+        boolean canConnectToSouth = canPaneConnectTo(worldIn, pos, EnumFacing.SOUTH) || blockSouth == ShojiPanels.PANEL_DOOR;
+        boolean canConnectToEast = canPaneConnectTo(worldIn, pos, EnumFacing.EAST) || blockEast == ShojiPanels.PANEL_DOOR;
+        boolean canConnectToWest = canPaneConnectTo(worldIn, pos, EnumFacing.WEST) || blockWest == ShojiPanels.PANEL_DOOR;
 
         boolean post = !canConnectToEast && !canConnectToNorth && !canConnectToSouth && !canConnectToWest;
 
@@ -54,27 +54,13 @@ public class BlockPanel extends BlockPane {
         IBlockState upState = worldIn.getBlockState(pos.up());
         IBlockState downState = worldIn.getBlockState(pos.down());
 
-        boolean top = false;
-        boolean down = false;
+        Block upBlock = upState.getBlock();
+        Block downBlock = downState.getBlock();
 
-        if (upState.getBlock() instanceof BlockPanel) {
-            top = true;
+        if(post) {
+            return state.withProperty(TYPE, EnumBlockType.POST);
         }
-
-        if ((downState.getBlock() instanceof BlockPanel || downState.getBlock() instanceof BlockPanelDoor)
-                && !downState.getBlock().isAir(downState, worldIn, pos.down())) {
-            down = true;
-        }
-
-        if(top && down) {
-            return state.withProperty(TYPE, EnumBlockType.MIDDLE);
-        } else if(down) {
-            return state.withProperty(TYPE, EnumBlockType.TOP);
-        } else {
-            return state.withProperty(TYPE, EnumBlockType.BOTTOM);
-        }
-
-    }
+     */
 
     @Override
     public boolean canPaneConnectTo(IBlockAccess world, BlockPos pos, EnumFacing dir) {
@@ -86,11 +72,14 @@ public class BlockPanel extends BlockPane {
         return false;
     }
 
+
     enum EnumBlockType implements IStringSerializable {
-        BOTTOM("bottom"),
+        BASE("base"),
+        SQUARE("square"),
         MIDDLE("middle"),
         TOP("top"),
-        POST("post");
+        POST("post"),
+        BOTTOM("bottom");
 
         private final String name;
 

@@ -1,8 +1,10 @@
 package com.wags13.tatami.features.shojipanels;
 
-import com.wags13.tatami.Registry;
+import com.wags13.tatami.features.shojipanels.blocks.BlockPanelFloral;
+import com.wags13.tatami.features.shojipanels.blocks.BlockPanelPlain;
+import com.wags13.tatami.features.shojipanels.blocks.BlockPanelTiled;
+import com.wags13.tatami.registries.GeneralRegistry;
 import com.wags13.tatami.base.Feature;
-import com.wags13.tatami.features.shojipanels.blocks.BlockPanel;
 import com.wags13.tatami.features.shojipanels.blocks.BlockPanelDoor;
 import com.wags13.tatami.features.shojipanels.items.ItemPanelDoor;
 import net.minecraft.block.Block;
@@ -23,17 +25,17 @@ public class ShojiPanels extends Feature {
 
     @Override
     public void preInit() {
-        PANEL_PLAIN = new BlockPanel();
-        PANEL_TILED = new BlockPanel();
-        PANEL_FLORAL = new BlockPanel();
+        PANEL_PLAIN = new BlockPanelPlain();
+        PANEL_TILED = new BlockPanelTiled();
+        PANEL_FLORAL = new BlockPanelFloral();
 
         PANEL_DOOR = new BlockPanelDoor();
         ITEM_PANEL_DOOR = new ItemPanelDoor(PANEL_DOOR);
 
-        Registry.registerBlockWithItemBlock(PANEL_PLAIN, "panel_plain");
-        Registry.registerBlockWithItemBlock(PANEL_TILED, "panel_tiled");
-        Registry.registerBlockWithItemBlock(PANEL_FLORAL, "panel_floral");
+        GeneralRegistry.registerBlockWithItemBlock(PANEL_PLAIN, "panel_plain");
+        GeneralRegistry.registerBlockWithItemBlock(PANEL_TILED, "panel_tiled");
+        GeneralRegistry.registerBlockWithItemBlock(PANEL_FLORAL, "panel_floral");
 
-        Registry.registerBlockWithCustomItem(PANEL_DOOR, ITEM_PANEL_DOOR, "panel_door");
+        GeneralRegistry.registerBlockWithCustomItem(PANEL_DOOR, ITEM_PANEL_DOOR, "panel_door");
     }
 }

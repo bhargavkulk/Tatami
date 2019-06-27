@@ -1,0 +1,22 @@
+{
+  "result": {
+    "item": "tatami:panel_plain",
+    "count": 6
+  },
+  "pattern": [
+    "XYX",
+    "XYX",
+    "XYX"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "Y": {
+      "type": "forge:ore_dict",
+      "ore": "paper"
+    },
+    "X": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    }
+  }
+}

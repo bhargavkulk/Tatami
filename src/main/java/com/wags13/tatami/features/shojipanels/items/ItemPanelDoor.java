@@ -1,10 +1,10 @@
 package com.wags13.tatami.features.shojipanels.items;
 
+import com.wags13.tatami.Tatami;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -20,7 +20,7 @@ public class ItemPanelDoor extends Item {
 
     public ItemPanelDoor(Block block) {
         this.block = block;
-        this.setCreativeTab(CreativeTabs.REDSTONE);
+        this.setCreativeTab(Tatami.tabTatami);
     }
 
     /**

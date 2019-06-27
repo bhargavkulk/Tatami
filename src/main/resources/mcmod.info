@@ -5,10 +5,10 @@
   "description": "A Japanese Architecture mod for Minecraft",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://www.curseforge.com/minecraft/mc-mods/tatami",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "",
+  "authorList": ["wags_13"],
+  "credits": "To everyone that has helped",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
