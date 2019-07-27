@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "normal": { "model": "tatami:stone_pillar" },
+    "inventory": {
+      "model": "tatami:stone_pillar",
+      "transform": "forge:default-block"
+    }
+  }
+}

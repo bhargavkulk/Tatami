@@ -1,0 +1,14 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "normal": { "model": "tatami:stone_lantern" },
+    "inventory": {
+      "model": "tatami:stone_lantern",
+      "transform": "forge:default-block"
+    },
+    "facing=west": { "model": "tatami:stone_lantern" },
+    "facing=north": { "model": "tatami:stone_lantern", "y": 90 },
+    "facing=east": { "model": "tatami:stone_lantern", "y": 180 },
+    "facing=south": { "model": "tatami:stone_lantern", "y": 270 }
+  }
+}
